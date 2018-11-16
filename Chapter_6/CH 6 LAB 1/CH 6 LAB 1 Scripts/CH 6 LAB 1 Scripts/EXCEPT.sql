@@ -1,0 +1,9 @@
+USE HealthCareSample;
+
+SELECT OV.PatientID
+FROM OutpatientVisit AS OV
+WHERE VisitDate BETWEEN '20070101' AND '20071231'
+EXCEPT
+SELECT OV.PatientID
+FROM OutpatientVisit AS OV
+WHERE VisitDate BETWEEN '20170101' AND '20171231';
