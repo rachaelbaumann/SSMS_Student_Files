@@ -1,0 +1,279 @@
+FirstName,LastName,Title,AccountID,OpeningBalance,OpeningDate,AccountType
+James               ,Brady               ,Teller,1,33009.37,2007-03-29,30 Year ARM                   
+Bryan               ,Mann                ,Teller,4,37048.13,2015-10-25,Premium Savings               
+Oscar               ,Russell             ,Teller,5,17185.94,2010-06-19,15 Year ARM                   
+Howard              ,Yeager              ,Banker,6,34732.16,1985-03-31,15 Year Fixed Mortgage        
+Oscar               ,Russell             ,Teller,7,44147.88,1988-02-02,Premium Savings               
+Brenda              ,Crist               ,Banker,8,43654.1,2006-07-15,15 Year Fixed Mortgage        
+Brenda              ,Crist               ,Banker,9,32963.78,2015-05-31,5 Year CD                     
+Aurelio             ,Bryant              ,Manager,10,42853.22,2007-03-04,Interest Checking             
+Brittany            ,Connors             ,Supervisor,11,0,1987-09-12,DebitCard                     
+Brittany            ,Connors             ,Supervisor,12,30765.29,2010-10-27,Simple Checking               
+Yolanda             ,Hume                ,Supervisor,13,58458.02,2008-07-19,5 Year CD                     
+Michell             ,Brown               ,Banker,14,44935.32,2017-08-23,1 Year CD                     
+Quinton             ,Riter               ,Banker,15,0,2008-07-07,DebitCard                     
+Michell             ,Brown               ,Banker,16,44134.68,2011-11-22,30 Year ARM                   
+Andrew              ,Romero              ,Banker,17,34946.31,2013-03-26,Simple Checking               
+Wilbert             ,Murray              ,Teller,18,43787.51,2010-02-05,30 Year Fixed Mortgage        
+Wilbert             ,Murray              ,Teller,19,26882.97,2013-09-23,Premium Savings               
+Sylvia              ,Flowers             ,Teller,20,3319.25,2014-07-16,Student Checking              
+Nancy               ,Peery               ,Banker,21,28126.01,1996-08-07,Premium Savings               
+Nancy               ,White               ,Banker,22,51944.12,2011-06-06,Simple Savings                
+Felipe              ,Gross               ,Banker,23,17233.93,2007-10-25,Student Checking              
+Stanley             ,Reeves              ,Banker,24,27878.26,2007-05-03,Simple Checking               
+Yolanda             ,Hume                ,Supervisor,25,33995.04,2014-01-16,Simple Checking               
+Brittany            ,Connors             ,Supervisor,26,32899.25,2010-03-13,Interest Checking             
+Edward              ,Haynes              ,Banker,27,41924.68,1988-04-23,30 Year Fixed Mortgage        
+Jill                ,Martin              ,Banker,28,19676.97,1985-01-30,5 Year CD                     
+Sharon              ,Moore               ,Teller,29,0,2006-04-02,CreditCard                    
+Phil                ,Hadley              ,Banker,30,34522.29,2005-04-06,15 Year Fixed Mortgage        
+Renetta             ,Carolan             ,Teller,31,13661.02,2009-09-08,Interest Checking             
+Ann                 ,Rakowski            ,Supervisor,32,32265.69,2012-10-04,Simple Savings                
+Cathryn             ,Edwards             ,Banker,33,14090.4,1994-03-10,1 Year CD                     
+Aurelio             ,Bryant              ,Manager,34,35414.28,2007-03-03,15 Year Fixed Mortgage        
+Ann                 ,Rakowski            ,Supervisor,35,10,2009-11-03,Simple Savings                
+Sharon              ,Moore               ,Teller,36,59156.3,2017-01-04,30 Year ARM                   
+Yolanda             ,Hume                ,Supervisor,37,9929.32,2011-02-24,5 Year CD                     
+Nancy               ,Salcedo             ,Banker,38,49690.37,1986-06-22,1 Year CD                     
+Sylvia              ,Flowers             ,Teller,39,16126.89,1991-11-03,15 Year ARM                   
+Ann                 ,Rakowski            ,Supervisor,40,22185.88,2009-12-26,Simple Savings                
+Brenda              ,Crist               ,Banker,41,16309.6,1983-04-12,Premium Savings               
+Judith              ,Thomas              ,Teller,42,0,2016-06-07,DebitCard                     
+Curtis              ,Leonard             ,Teller,43,5902.82,2009-01-05,1 Year CD                     
+Nancy               ,Salcedo             ,Banker,44,52297.25,2014-09-29,Student Checking              
+Robin               ,Harden              ,Banker,45,37521.9,2010-04-07,Interest Checking             
+Rose                ,Jones               ,Teller,46,10784.93,2010-12-30,15 Year ARM                   
+Cathryn             ,Edwards             ,Banker,47,0,1992-01-26,CreditCard                    
+Andra               ,White               ,Supervisor,48,0,2008-02-23,DebitCard                     
+Carleen             ,Whitaker            ,Banker,49,36381.34,2007-05-16,15 Year Fixed Mortgage        
+Fannie              ,White               ,Supervisor,50,32773.64,2014-03-15,Simple Checking               
+Frederick           ,Meyer               ,Banker,51,9968.81,2010-03-12,Interest Checking             
+Judith              ,Thomas              ,Teller,52,0,1981-05-22,DebitCard                     
+Craig               ,Montgomery          ,Auditor,53,29528.74,1991-01-31,5 Year CD                     
+Andra               ,White               ,Supervisor,54,16711.37,2017-05-14,1 Year CD                     
+Bridgett            ,Deleon              ,Banker,55,0,2008-04-27,CreditCard                    
+Rose                ,Jones               ,Teller,56,21519.71,2005-06-11,Student Checking              
+Amanda              ,Hill                ,Supervisor,57,54433.58,2005-05-01,15 Year Fixed Mortgage        
+Andra               ,White               ,Supervisor,58,40786.92,1992-09-14,Student Checking              
+Judith              ,Thomas              ,Teller,59,32560.73,2012-06-28,30 Year ARM                   
+Robin               ,Harden              ,Banker,60,0,2013-05-08,CreditCard                    
+Jennifer            ,Humphreys           ,Teller,61,31320.1,2012-10-07,1 Year CD                     
+Felipe              ,Gross               ,Banker,62,26806.97,1983-01-26,15 Year ARM                   
+Graciela            ,Arguello            ,Banker,63,35356.65,2016-06-08,Premium Savings               
+Oscar               ,Russell             ,Teller,64,22598.06,2016-09-13,Simple Checking               
+Jane                ,Strickland          ,Supervisor,65,33975.53,1983-03-30,30 Year Fixed Mortgage        
+George              ,Pritchard           ,Banker,66,57230.96,2012-07-30,Interest Checking             
+Teresa              ,Fox                 ,Teller,67,31844.01,2007-04-12,30 Year ARM                   
+Wilbert             ,Murray              ,Teller,68,662.28,1985-08-14,Premium Savings               
+Quinton             ,Riter               ,Banker,69,23612.88,2006-06-30,Interest Checking             
+Bridgett            ,Deleon              ,Banker,70,11921.89,2009-04-21,1 Year CD                     
+Brenda              ,Crist               ,Banker,71,24354.13,2014-02-05,Premium Savings               
+George              ,Pritchard           ,Banker,72,34204.06,2010-02-19,Premium Savings               
+Jennifer            ,Humphreys           ,Teller,73,2570.94,1991-01-02,1 Year CD                     
+Jean                ,Heffington          ,Banker,74,28261.52,2006-07-30,30 Year Fixed Mortgage        
+Michell             ,Brown               ,Banker,75,0,2009-01-06,CreditCard                    
+Michell             ,Brown               ,Banker,76,28532.46,2000-12-09,5 Year CD                     
+Sasha               ,Burgin              ,Banker,77,0,2007-06-12,CreditCard                    
+Phil                ,Hadley              ,Banker,78,20999.76,2015-12-12,Simple Savings                
+Nancy               ,Peery               ,Banker,79,51993.94,1996-09-29,15 Year Fixed Mortgage        
+Sung                ,Poirier             ,Auditor,80,0,2008-09-30,CreditCard                    
+Nancy               ,Peery               ,Banker,81,12341.78,2015-08-19,30 Year Fixed Mortgage        
+Jill                ,Moore               ,Banker,82,31926.7,2007-04-21,Premium Savings               
+Phil                ,Hadley              ,Banker,83,0,2016-04-15,DebitCard                     
+Sylvia              ,Flowers             ,Teller,84,0,1992-01-07,CreditCard                    
+Edward              ,Haynes              ,Banker,85,29315.27,2013-08-03,30 Year ARM                   
+Curtis              ,Leonard             ,Teller,86,6717.19,2016-12-21,Student Checking              
+Sharon              ,Moore               ,Teller,87,36355.66,2014-11-22,1 Year CD                     
+Howard              ,Yeager              ,Banker,88,0,2011-09-05,CreditCard                    
+Fannie              ,White               ,Supervisor,89,0,2007-08-31,DebitCard                     
+Jill                ,Martin              ,Banker,90,33959.48,2013-07-16,15 Year Fixed Mortgage        
+George              ,Pritchard           ,Banker,91,23963.74,2015-07-06,15 Year Fixed Mortgage        
+Jean                ,Heffington          ,Banker,92,32339.68,2005-08-30,Student Checking              
+Craig               ,Montgomery          ,Auditor,93,8964.72,2006-02-11,Simple Savings                
+Brittany            ,Connors             ,Supervisor,94,10514.38,2017-09-29,Student Checking              
+Oscar               ,Russell             ,Teller,95,10,2013-09-14,Simple Checking               
+Renetta             ,Carolan             ,Teller,96,29393.73,2013-08-07,Simple Checking               
+Quinton             ,Riter               ,Banker,97,57502.09,2010-09-28,Student Checking              
+Renetta             ,Carolan             ,Teller,98,21722.18,2017-10-14,1 Year CD                     
+Cathryn             ,Edwards             ,Banker,99,0,1995-01-01,CreditCard                    
+Phil                ,Hadley              ,Banker,100,26930.03,2014-02-07,Interest Checking             
+Amanda              ,Hill                ,Supervisor,101,26206.01,1997-08-22,30 Year Fixed Mortgage        
+Phil                ,Hadley              ,Banker,102,0,2006-07-29,CreditCard                    
+Nancy               ,Salcedo             ,Banker,103,35674.38,1994-11-20,1 Year CD                     
+Jane                ,Strickland          ,Supervisor,104,40704.57,2009-07-12,1 Year CD                     
+Mary                ,McCann              ,Teller,105,10,2009-01-04,15 Year ARM                   
+William             ,Diamond             ,Manager,106,26553.48,2008-06-18,Simple Savings                
+Quinton             ,Riter               ,Banker,107,0,2010-11-17,DebitCard                     
+Oscar               ,Russell             ,Teller,108,45773.68,2005-01-30,1 Year CD                     
+Brittany            ,Connors             ,Supervisor,109,0,2010-01-23,DebitCard                     
+William             ,Diamond             ,Manager,110,10,2015-10-13,15 Year Fixed Mortgage        
+Teresa              ,Fox                 ,Teller,111,22288.02,2010-01-27,30 Year ARM                   
+Frank               ,Puls                ,Banker,112,23490.18,2014-11-29,30 Year ARM                   
+Graciela            ,Arguello            ,Banker,113,24644.44,2009-05-05,15 Year ARM                   
+Frederick           ,Meyer               ,Banker,114,17622.02,2011-02-18,5 Year CD                     
+Oscar               ,Russell             ,Teller,115,41815.54,2013-03-12,1 Year CD                     
+Robin               ,Harden              ,Banker,116,40930.41,1984-12-18,Interest Checking             
+Renetta             ,Carolan             ,Teller,117,0,2006-05-05,DebitCard                     
+Robin               ,Harden              ,Banker,118,52095.63,2006-02-02,15 Year ARM                   
+Rose                ,Jones               ,Teller,119,42856.54,2015-04-24,Interest Checking             
+Cathryn             ,Edwards             ,Banker,120,10060.21,2007-07-28,Premium Savings               
+Carleen             ,Whitaker            ,Banker,121,25581.74,2006-05-10,1 Year CD                     
+Wilbert             ,Murray              ,Teller,122,17952.07,2008-10-31,1 Year CD                     
+Graciela            ,Arguello            ,Banker,123,48017.65,1998-02-07,Premium Savings               
+Craig               ,Montgomery          ,Auditor,124,9721.91,2008-09-26,15 Year ARM                   
+Ann                 ,Rakowski            ,Supervisor,125,29984.85,1996-10-17,1 Year CD                     
+Brittany            ,Connors             ,Supervisor,126,52551.92,2013-10-02,30 Year Fixed Mortgage        
+Andrew              ,Romero              ,Banker,127,10630.76,2012-05-24,Premium Savings               
+Louise              ,Hiatt               ,Banker,128,35983.51,2017-01-01,Student Checking              
+Quinton             ,Riter               ,Banker,129,0,2011-12-21,DebitCard                     
+Howard              ,Yeager              ,Banker,130,43268.72,1995-11-22,30 Year ARM                   
+Sung                ,Poirier             ,Auditor,131,0,2005-08-13,CreditCard                    
+Howard              ,Yeager              ,Banker,132,0,2011-11-11,DebitCard                     
+Mary                ,McCann              ,Teller,133,18242.15,2013-08-02,Simple Checking               
+Amanda              ,Hill                ,Supervisor,134,29586.8,2017-02-11,30 Year Fixed Mortgage        
+Howard              ,Yeager              ,Banker,135,10,1982-08-13,Interest Checking             
+Jill                ,Martin              ,Banker,136,23528.02,2011-09-18,15 Year Fixed Mortgage        
+Cathryn             ,Edwards             ,Banker,137,32956.95,2009-03-01,Interest Checking             
+Nancy               ,Peery               ,Banker,138,42709.38,2017-08-30,Interest Checking             
+Fannie              ,White               ,Supervisor,139,0,2016-10-25,DebitCard                     
+Howard              ,Yeager              ,Banker,140,19132.38,2013-02-20,Simple Checking               
+Jean                ,Heffington          ,Banker,141,36826.02,2008-07-05,Simple Savings                
+Mary                ,McCann              ,Teller,142,0,2007-05-06,CreditCard                    
+Fannie              ,White               ,Supervisor,143,46786.99,2006-09-09,1 Year CD                     
+William             ,Diamond             ,Manager,144,41006.78,2008-07-21,15 Year Fixed Mortgage        
+Nancy               ,White               ,Banker,145,16552.32,2006-04-26,30 Year ARM                   
+Oscar               ,Russell             ,Teller,146,0,2013-03-04,CreditCard                    
+Teresa              ,Fox                 ,Teller,147,14017.68,1985-11-21,30 Year ARM                   
+Rose                ,Jones               ,Teller,148,1563.38,1999-04-11,Simple Checking               
+Amanda              ,Hill                ,Supervisor,149,27010.2,1990-03-02,15 Year ARM                   
+Quinton             ,Riter               ,Banker,150,40388.07,1994-11-27,15 Year ARM                   
+Amanda              ,Hill                ,Supervisor,151,0,2008-12-21,CreditCard                    
+Yolanda             ,Hume                ,Supervisor,152,0,2009-02-08,DebitCard                     
+Carleen             ,Whitaker            ,Banker,153,19722.82,2014-05-18,Simple Checking               
+Aurelio             ,Bryant              ,Manager,154,35078.16,1990-02-18,30 Year ARM                   
+Frank               ,Puls                ,Banker,155,9936.23,2016-03-28,1 Year CD                     
+Brittany            ,Connors             ,Supervisor,156,6602.38,2011-07-09,Student Checking              
+Sylvia              ,Flowers             ,Teller,157,41358.49,2016-06-12,5 Year CD                     
+Aurelio             ,Bryant              ,Manager,158,5020.89,2017-12-07,5 Year CD                     
+Andra               ,White               ,Supervisor,159,0,2005-09-01,CreditCard                    
+Stanley             ,Reeves              ,Banker,160,27037.98,2009-10-31,1 Year CD                     
+Bridgett            ,Deleon              ,Banker,161,30945.39,2015-02-24,Interest Checking             
+Ann                 ,Rakowski            ,Supervisor,162,41685.91,2007-04-04,5 Year CD                     
+Jane                ,Strickland          ,Supervisor,163,36098.02,2015-06-01,30 Year ARM                   
+Judith              ,Thomas              ,Teller,164,2240.37,2017-04-16,Simple Savings                
+William             ,Diamond             ,Manager,165,25414.78,2017-06-12,5 Year CD                     
+Wilbert             ,Murray              ,Teller,166,0,2007-11-09,CreditCard                    
+Aurelio             ,Bryant              ,Manager,167,49817.7,1984-02-22,1 Year CD                     
+Yolanda             ,Hume                ,Supervisor,168,27610.29,2009-08-05,30 Year Fixed Mortgage        
+Jill                ,Martin              ,Banker,169,43530.47,2013-06-28,30 Year Fixed Mortgage        
+Andrew              ,Romero              ,Banker,170,27072.12,2008-03-18,30 Year Fixed Mortgage        
+Stanley             ,Reeves              ,Banker,171,23390.98,2009-09-30,15 Year Fixed Mortgage        
+Sharon              ,Moore               ,Teller,172,21607.62,2011-07-30,30 Year ARM                   
+Judith              ,Thomas              ,Teller,173,16601.67,2015-10-21,15 Year ARM                   
+Howard              ,Yeager              ,Banker,174,26564.78,2007-10-24,Simple Checking               
+Rose                ,Jones               ,Teller,175,0,2015-01-23,DebitCard                     
+Cathy               ,Locke               ,Supervisor,176,15693.96,2007-06-27,30 Year ARM                   
+Felipe              ,Gross               ,Banker,177,0,2010-12-23,CreditCard                    
+Louise              ,Hiatt               ,Banker,178,38814.3,2014-07-09,30 Year Fixed Mortgage        
+Frank               ,Puls                ,Banker,179,30025.17,2015-05-13,5 Year CD                     
+Bryan               ,Mann                ,Teller,180,30245.54,2014-09-23,30 Year ARM                   
+William             ,Diamond             ,Manager,181,23305.83,2010-04-22,15 Year Fixed Mortgage        
+Jill                ,Moore               ,Banker,182,47231.35,2011-06-30,15 Year Fixed Mortgage        
+Jill                ,Moore               ,Banker,183,31319.53,2015-10-20,30 Year Fixed Mortgage        
+Robin               ,Harden              ,Banker,184,29393.54,2017-01-06,Simple Checking               
+Wilbert             ,Murray              ,Teller,185,29898.02,2015-04-10,Simple Checking               
+Renetta             ,Carolan             ,Teller,186,11218.55,2011-11-25,Student Checking              
+Wilbert             ,Murray              ,Teller,187,0,1987-05-01,DebitCard                     
+Cathryn             ,Edwards             ,Banker,188,33026.25,2011-06-10,30 Year ARM                   
+Stanley             ,Reeves              ,Banker,189,49348.32,2013-04-22,15 Year ARM                   
+Nancy               ,Peery               ,Banker,190,58164.45,2006-08-25,1 Year CD                     
+Stanley             ,Reeves              ,Banker,191,26559.74,2017-04-28,Simple Savings                
+Aurelio             ,Bryant              ,Manager,192,19716.37,2015-08-29,30 Year Fixed Mortgage        
+Robin               ,Harden              ,Banker,193,33496.19,2014-03-04,Premium Savings               
+Phil                ,Hadley              ,Banker,194,0,2005-12-21,DebitCard                     
+Rose                ,Jones               ,Teller,195,39318.82,2006-11-11,15 Year Fixed Mortgage        
+George              ,Pritchard           ,Banker,196,39690.09,1980-10-24,30 Year Fixed Mortgage        
+William             ,Diamond             ,Manager,197,8253.59,2013-04-12,30 Year ARM                   
+Mary                ,McCann              ,Teller,198,26542.18,2013-11-15,30 Year Fixed Mortgage        
+Oscar               ,Russell             ,Teller,199,24923.34,2012-01-03,Simple Savings                
+Jane                ,Strickland          ,Supervisor,200,47073.02,2009-02-23,Interest Checking             
+Louise              ,Hiatt               ,Banker,201,0,2010-09-29,CreditCard                    
+Curtis              ,Leonard             ,Teller,202,30391.95,2015-03-05,30 Year Fixed Mortgage        
+Sasha               ,Burgin              ,Banker,203,14415.82,2015-03-03,Premium Savings               
+Fannie              ,White               ,Supervisor,204,0,1998-12-03,DebitCard                     
+Amanda              ,Hill                ,Supervisor,205,49831.95,1995-04-27,15 Year ARM                   
+Fannie              ,White               ,Supervisor,206,33241.29,2014-10-21,1 Year CD                     
+Craig               ,Montgomery          ,Auditor,207,0,1997-10-31,CreditCard                    
+James               ,Brady               ,Teller,208,39760.17,1988-03-29,1 Year CD                     
+Aurelio             ,Bryant              ,Manager,209,36534.76,2011-03-17,30 Year ARM                   
+Sylvia              ,Flowers             ,Teller,210,45233.92,2017-10-01,Student Checking              
+Felipe              ,Gross               ,Banker,211,8276.94,2013-11-06,15 Year ARM                   
+Andrew              ,Romero              ,Banker,212,25865.22,1995-01-18,15 Year ARM                   
+Frank               ,Puls                ,Banker,213,0,1981-04-26,CreditCard                    
+Wilbert             ,Murray              ,Teller,214,53313.44,2013-04-09,5 Year CD                     
+Fannie              ,White               ,Supervisor,215,37711.85,2016-02-07,30 Year ARM                   
+Aurelio             ,Bryant              ,Manager,216,8499.49,2005-01-09,5 Year CD                     
+Renetta             ,Carolan             ,Teller,217,0,2016-06-16,CreditCard                    
+Craig               ,Montgomery          ,Auditor,218,1701.8,2015-03-20,Premium Savings               
+Sharon              ,Moore               ,Teller,219,40328.6,2007-10-07,Premium Savings               
+Yolanda             ,Hume                ,Supervisor,220,20379.78,1985-07-14,15 Year ARM                   
+Amanda              ,Hill                ,Supervisor,221,0,2007-06-18,CreditCard                    
+Nancy               ,Peery               ,Banker,222,45963.38,2011-08-02,Simple Savings                
+Nancy               ,Salcedo             ,Banker,223,41502.82,1998-08-28,30 Year Fixed Mortgage        
+Graciela            ,Arguello            ,Banker,224,27862.6,2011-10-28,Interest Checking             
+Felipe              ,Gross               ,Banker,225,31573.05,1982-05-22,5 Year CD                     
+Aurelio             ,Bryant              ,Manager,226,45842.76,2012-09-26,1 Year CD                     
+Nancy               ,White               ,Banker,227,33778.04,1987-06-15,Student Checking              
+Sharon              ,Moore               ,Teller,228,0,2010-06-08,CreditCard                    
+Frederick           ,Meyer               ,Banker,229,25992.66,2008-10-26,15 Year Fixed Mortgage        
+Felipe              ,Gross               ,Banker,230,12029.45,2017-09-07,Student Checking              
+Sharon              ,Moore               ,Teller,231,57955.45,2009-08-24,Simple Checking               
+Nancy               ,Salcedo             ,Banker,232,0,1997-06-29,CreditCard                    
+Amanda              ,Hill                ,Supervisor,233,24088.91,2009-03-12,5 Year CD                     
+Louise              ,Hiatt               ,Banker,234,25158.24,2011-08-30,1 Year CD                     
+Nancy               ,Salcedo             ,Banker,235,39576.01,1982-08-28,Interest Checking             
+Graciela            ,Arguello            ,Banker,236,40836.17,2006-03-12,Interest Checking             
+Cathy               ,Locke               ,Supervisor,237,0,2016-12-22,DebitCard                     
+Andra               ,White               ,Supervisor,238,0,2013-03-15,DebitCard                     
+Wilbert             ,Murray              ,Teller,239,43917.64,2006-12-29,15 Year Fixed Mortgage        
+Graciela            ,Arguello            ,Banker,240,17273.49,2012-05-12,1 Year CD                     
+Nancy               ,White               ,Banker,241,320.53,2006-10-11,Student Checking              
+Andra               ,White               ,Supervisor,242,40048.02,2005-01-24,15 Year ARM                   
+Robin               ,Harden              ,Banker,243,11421.01,2014-10-14,1 Year CD                     
+George              ,Pritchard           ,Banker,244,26718.04,2016-04-08,30 Year ARM                   
+Sung                ,Poirier             ,Auditor,245,25054.56,1989-02-12,30 Year Fixed Mortgage        
+Jill                ,Martin              ,Banker,246,33425.12,1993-12-25,30 Year Fixed Mortgage        
+Nancy               ,White               ,Banker,247,30762.47,2011-07-20,30 Year ARM                   
+Amanda              ,Hill                ,Supervisor,248,28982.54,2013-03-18,Simple Checking               
+Wilbert             ,Murray              ,Teller,249,37977.39,2009-08-08,30 Year ARM                   
+Jennifer            ,Humphreys           ,Teller,250,36697.92,2014-07-17,Student Checking              
+Jill                ,Martin              ,Banker,251,0,2008-03-11,DebitCard                     
+Andrew              ,Romero              ,Banker,252,30960.92,2007-11-03,1 Year CD                     
+Ann                 ,Rakowski            ,Supervisor,253,0,2014-06-05,DebitCard                     
+Teresa              ,Fox                 ,Teller,254,56832.48,2013-01-01,Simple Checking               
+Robin               ,Harden              ,Banker,255,0,2012-03-18,DebitCard                     
+Mary                ,McCann              ,Teller,256,49735.44,1996-07-02,30 Year ARM                   
+Amanda              ,Hill                ,Supervisor,257,12531.99,2016-08-18,15 Year Fixed Mortgage        
+Graciela            ,Arguello            ,Banker,258,44819.94,2017-12-17,30 Year ARM                   
+Bryan               ,Mann                ,Teller,259,8179.54,1991-05-12,Interest Checking             
+George              ,Pritchard           ,Banker,260,39996.55,2010-03-14,5 Year CD                     
+Wilbert             ,Murray              ,Teller,261,23730.81,2007-10-18,1 Year CD                     
+Wilbert             ,Murray              ,Teller,262,22907.15,2010-10-26,15 Year ARM                   
+Felipe              ,Gross               ,Banker,263,0,2009-10-26,DebitCard                     
+Quinton             ,Riter               ,Banker,264,61400.96,2005-04-26,Interest Checking             
+Sasha               ,Burgin              ,Banker,265,24955.1,2000-08-10,Simple Checking               
+Sharon              ,Moore               ,Teller,266,10373.94,1989-06-17,15 Year ARM                   
+Sylvia              ,Flowers             ,Teller,267,13328.25,2011-05-19,1 Year CD                     
+Fannie              ,White               ,Supervisor,268,32053.28,2013-09-30,30 Year ARM                   
+Felipe              ,Gross               ,Banker,269,43562.46,2009-10-04,Simple Savings                
+Bridgett            ,Deleon              ,Banker,270,21747.73,2008-11-27,30 Year Fixed Mortgage        
+Frederick           ,Meyer               ,Banker,271,19048.73,1982-07-16,15 Year Fixed Mortgage        
+Nancy               ,White               ,Banker,272,53096.35,2005-12-06,Interest Checking             
+Curtis              ,Leonard             ,Teller,273,27294.88,2014-07-29,Interest Checking             
+Jennifer            ,Humphreys           ,Teller,274,0,2017-04-17,DebitCard                     
+Mary                ,McCann              ,Teller,275,49770.07,2012-07-10,1 Year CD                     
+Sylvia              ,Flowers             ,Teller,276,30749.46,2011-08-17,Student Checking              
+Carleen             ,Whitaker            ,Banker,277,29596.64,2007-06-21,Simple Checking               
+Howard              ,Yeager              ,Banker,278,24324.16,2012-04-25,Interest Checking             
+Louise              ,Hiatt               ,Banker,279,42199.68,2010-08-21,5 Year CD                     
+Michell             ,Brown               ,Banker,280,3631.66,2006-03-05,Interest Checking             
