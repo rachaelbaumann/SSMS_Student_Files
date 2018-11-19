@@ -29,3 +29,48 @@ SELECT A.AccountID, A.OpeningBalance,
 	   WHERE AccountTypeID = 12) - A.OpeningBalance AS [Difference from Average]
 FROM Account AS A
 WHERE AccountTypeID = 12;
+
+-- SUBQUERIES IN A WHERE CLAUSE
+-- Limit the rows in a result set based on the data that is returned from a different query.
+-- RULES:
+--		*Unless using EXISTS, the subquery will return a single column.
+--		*If a comparison operator is used in the WHERE clause of the outer query, a single value
+--			must be returned from the inner query.
+--		*With th IN keyword, multiple values in a single column are allowed.
+--		*When using IN or a comparison operator, the column in the WHERE clause of the outer
+--			query must be of a compatible data type to the column in the SELECT list of the outer query
+SELECT AT.AcctID, AT.TransactionType, AT.Amount
+FROM AccountTransaction AS AT
+WHERE AT.AcctID IN (
+	SELECT AccountID
+	FROM CustomerAccount
+	GROUP BY AccountID
+	HAVING COUNT(*) > 1
+);
+
+-- EXISTS
+-- Used to check if any rows are returned by the subquery. Returns True or False.
+SELECT C.CustomerID, C.FirstName, C.LastName
+FROM Customer AS C
+WHERE NOT EXISTS (
+	SELECT 1 FROM Account AS A
+	WHERE A.PrimaryCustomerID = C.CustomerID
+);
+
+-- SUBQUERIES IN FROM CLAUSE
+-- Referred to as a 'derived table'. Used when you want to manipulate data by:
+--		*changing column definitions 
+--		*joining multiple tables together
+--		*performing aggregations
+--		*or other data manipulation.
+-- The following will return ATrans for accounts with more than one linked customer.
+SELECT AccountID, AT.TransactionType, AT.Amount
+FROM (
+	SELECT AccountID, COUNT(*) AS CustomerCount
+	FROM CustomerAccount
+	GROUP BY AccountID
+	HAVING COUNT(*) > 1
+ ) AS MultiUserAccounts
+ INNER JOIN AccountTransaction AS AT
+ ON AT.AcctID = MultiUserAccounts.AccountID;
+
