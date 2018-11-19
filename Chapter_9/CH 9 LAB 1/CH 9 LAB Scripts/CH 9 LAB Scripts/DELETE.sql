@@ -17,3 +17,4 @@ FROM OutpatientVisit AS OV
 	ON OV.PatientID = OVS.PatientID
 WHERE ICD10_2 IS NULL;
 
+SELECT * FROM OutpatientVisitSummary
