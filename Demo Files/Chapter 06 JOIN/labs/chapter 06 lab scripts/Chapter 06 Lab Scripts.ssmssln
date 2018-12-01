@@ -1,0 +1,17 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# SQL Server Management Studio Solution File, Format Version 12.00
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Chapter 06 Lab Scripts", "Chapter 06 Lab Scripts\Chapter 06 Lab Scripts.ssmssqlproj", "{C6291D0D-CD7A-456B-A3D6-F99318278E2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6291D0D-CD7A-456B-A3D6-F99318278E2B}.Default|Default.ActiveCfg = Default
+		{C648AE37-89D0-4FF6-8BFD-1F1B2005D133}.Default|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

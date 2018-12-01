@@ -1,0 +1,1772 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/13/2018 11:14:44 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ANN-P50"
+  DTS:CreatorName="ANN-P50\Ann"
+  DTS:DelayValidation="True"
+  DTS:Description="Import PatientAnalyticFile_withScore.csv  and create new DB and Table"
+  DTS:DTSID="{6F87484A-6069-4291-B7A7-BF4C0E91D3B4}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2150.2"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="ImportPatientAnalytics"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{92AFBBE4-E932-4E34-94F4-B7D0891B062F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{73BB9619-F4E0-41D1-BCC8-A47B6E8BDB8C}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=SampleAnalytics;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{198389BA-B4ED-4564-995A-EC371532BF1A}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Classfiles\T-SQL\Chapter 12 Final\Starter\PatientAnalyticFile_withScore.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PatientID"
+              DTS:DTSID="{8FE942F3-E2D6-4BB7-ABCF-33B853A282AC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DateOfBirth"
+              DTS:DTSID="{0111622C-E697-4357-B9D1-0F001EB8482A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{BB13DD25-2F69-4254-8AC5-DD6A87D75C15}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Race"
+              DTS:DTSID="{3D452404-C2E1-45F7-8ED0-2478CDA61C4C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Myocardial_infarction"
+              DTS:DTSID="{C528D650-1E4E-47F5-B14F-8C764CE83156}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Congestive_heart_failure"
+              DTS:DTSID="{62B95261-B85F-454E-91AA-3D781B30FFDD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Peripheral_vascular_disease"
+              DTS:DTSID="{5E88481F-4179-4822-97E1-26D3FC6D4942}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Stroke"
+              DTS:DTSID="{49013DE5-AA6B-49D3-BBFE-45E5F8BCA615}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Dementia"
+              DTS:DTSID="{EC52B902-48EF-4A84-95B5-96DB51F7BCDF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pulmonary"
+              DTS:DTSID="{69072EF0-37B8-49AC-BFFE-FF99B4F507CD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Rheumatic"
+              DTS:DTSID="{5DCFF857-6BA4-4077-A25B-153986113C8B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Peptic_ulcer_disease"
+              DTS:DTSID="{D48255E6-2106-4F38-B2C6-5AAA7157C299}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LiverMild"
+              DTS:DTSID="{2A88F41E-23BA-4579-95F2-2D1F017FEB6D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Diabetes_without_complications"
+              DTS:DTSID="{2D6DD7AC-511E-4F14-9148-038D1F2AA82E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Diabetes_with_complications"
+              DTS:DTSID="{640E6F36-3B14-44BF-97B2-D6110055CD8D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Paralysis"
+              DTS:DTSID="{EF46F7D6-8B08-40F4-A9B7-9E06B771755E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Renal"
+              DTS:DTSID="{C45B237B-ABB2-4611-94E4-068A6B92EEAD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cancer"
+              DTS:DTSID="{9F887008-F2BB-46A0-B3B8-B434F00EB7D9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LiverSevere"
+              DTS:DTSID="{75C943AE-8EC2-4166-91B1-84841FA87F62}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Metastatic_solid_tumour"
+              DTS:DTSID="{FBCE6AB4-362B-451A-BC28-4E8366D2EC02}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HIV"
+              DTS:DTSID="{1575C2EE-77EE-4BB8-B405-490701835415}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Obesity"
+              DTS:DTSID="{1DFAAD1D-4956-4622-9956-CA4D67EE332B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Depression"
+              DTS:DTSID="{AB466463-24EC-4D6E-B3CB-09D6C7062313}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Hypertension"
+              DTS:DTSID="{B825A8F3-6FEA-4F42-A650-61773A900759}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Drugs"
+              DTS:DTSID="{2C250F60-69C5-4932-B082-13A32CF24337}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Alcohol"
+              DTS:DTSID="{D86FA595-C7FB-43D5-98AA-5833AEB157B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="First_Appointment_Date"
+              DTS:DTSID="{7C7A6EA1-5DA5-4A2C-B0FE-70C5570D9038}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Last_Appointment_Date"
+              DTS:DTSID="{0B8F1652-5B1E-4DBB-ADE3-E3A7BA867F0F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DateOfDeath"
+              DTS:DTSID="{58CBA88C-BD7E-45AA-BE4C-D28B81C79891}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="death"
+              DTS:DTSID="{7750F79B-3863-486F-988C-A538009BA7D3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:DataScale="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="mortality_score"
+              DTS:DTSID="{675B50B4-571A-450D-BB17-EE02C42BCD15}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CREATE DATABASE SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{AAADE49A-628F-450E-B9D9-F7665777CDAA}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CREATE DATABASE SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2016; © 2015 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5E5D941D-8239-4A80-8EB7-B907B8B07FB1}"
+          SQLTask:SqlStatementSource="CREATE DATABASE SampleAnalytics;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CREATE TABLE SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{783223F6-6363-4309-84BA-48EBB2754B0A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CREATE TABLE SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{73BB9619-F4E0-41D1-BCC8-A47B6E8BDB8C}"
+          SQLTask:SqlStatementSource="CREATE TABLE [dbo].[PatientAnalytics] (&#xA;[PatientID] int,&#xA;[DateOfBirth] datetime,&#xA;[Gender] varchar(50),&#xA;[Race] varchar(50),&#xA;[Myocardial_infarction] bit,&#xA;[Congestive_heart_failure] bit,&#xA;[Peripheral_vascular_disease] bit,&#xA;[Stroke] bit,&#xA;[Dementia] bit,&#xA;[Pulmonary] bit,&#xA;[Rheumatic] bit,&#xA;[Peptic_ulcer_disease] bit,&#xA;[LiverMild] bit,&#xA;[Diabetes_without_complications] bit,&#xA;[Diabetes_with_complications] bit,&#xA;[Paralysis] bit,&#xA;[Renal] bit,&#xA;[Cancer] bit,&#xA;[LiverSevere] bit,&#xA;[Metastatic_solid_tumour] bit,&#xA;[HIV] bit,&#xA;[Obesity] bit,&#xA;[Depression] bit,&#xA;[Hypertension] bit,&#xA;[Drugs] bit,&#xA;[Alcohol] bit,&#xA;[First_Appointment_Date] datetime,&#xA;[Last_Appointment_Date] datetime,&#xA;[DateOfDeath] datetime,&#xA;[death] varchar(50),&#xA;[mortality_score] numeric(18,16)&#xA;)&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{AD3BFD66-DE02-48D5-A18A-4707F9112005}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Destination - PatientAnalytics"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - PatientAnalytics"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[PatientAnalytics]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[PatientID]"
+                      cachedDataType="i4"
+                      cachedName="PatientID"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[PatientID]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[PatientID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[DateOfBirth]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DateOfBirth"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[DateOfBirth]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[DateOfBirth]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Race]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Race"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Race]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Race]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Myocardial_infarction]"
+                      cachedDataType="bool"
+                      cachedName="Myocardial_infarction"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Myocardial_infarction]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Myocardial_infarction]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Congestive_heart_failure]"
+                      cachedDataType="bool"
+                      cachedName="Congestive_heart_failure"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Congestive_heart_failure]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Congestive_heart_failure]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Peripheral_vascular_disease]"
+                      cachedDataType="bool"
+                      cachedName="Peripheral_vascular_disease"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Peripheral_vascular_disease]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Peripheral_vascular_disease]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Stroke]"
+                      cachedDataType="bool"
+                      cachedName="Stroke"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Stroke]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Stroke]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Dementia]"
+                      cachedDataType="bool"
+                      cachedName="Dementia"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Dementia]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Dementia]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Pulmonary]"
+                      cachedDataType="bool"
+                      cachedName="Pulmonary"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Pulmonary]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Pulmonary]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Rheumatic]"
+                      cachedDataType="bool"
+                      cachedName="Rheumatic"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Rheumatic]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Rheumatic]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Peptic_ulcer_disease]"
+                      cachedDataType="bool"
+                      cachedName="Peptic_ulcer_disease"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Peptic_ulcer_disease]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Peptic_ulcer_disease]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[LiverMild]"
+                      cachedDataType="bool"
+                      cachedName="LiverMild"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[LiverMild]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[LiverMild]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Diabetes_without_complications]"
+                      cachedDataType="bool"
+                      cachedName="Diabetes_without_complications"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Diabetes_without_complications]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Diabetes_without_complications]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Diabetes_with_complications]"
+                      cachedDataType="bool"
+                      cachedName="Diabetes_with_complications"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Diabetes_with_complications]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Diabetes_with_complications]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Paralysis]"
+                      cachedDataType="bool"
+                      cachedName="Paralysis"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Paralysis]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Paralysis]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Renal]"
+                      cachedDataType="bool"
+                      cachedName="Renal"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Renal]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Renal]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Cancer]"
+                      cachedDataType="bool"
+                      cachedName="Cancer"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Cancer]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Cancer]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[LiverSevere]"
+                      cachedDataType="bool"
+                      cachedName="LiverSevere"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[LiverSevere]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[LiverSevere]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Metastatic_solid_tumour]"
+                      cachedDataType="bool"
+                      cachedName="Metastatic_solid_tumour"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Metastatic_solid_tumour]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Metastatic_solid_tumour]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[HIV]"
+                      cachedDataType="bool"
+                      cachedName="HIV"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[HIV]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[HIV]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Obesity]"
+                      cachedDataType="bool"
+                      cachedName="Obesity"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Obesity]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Obesity]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Depression]"
+                      cachedDataType="bool"
+                      cachedName="Depression"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Depression]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Depression]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Hypertension]"
+                      cachedDataType="bool"
+                      cachedName="Hypertension"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Hypertension]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Hypertension]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Drugs]"
+                      cachedDataType="bool"
+                      cachedName="Drugs"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Drugs]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Drugs]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Alcohol]"
+                      cachedDataType="bool"
+                      cachedName="Alcohol"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Alcohol]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Alcohol]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[First_Appointment_Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="First_Appointment_Date"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[First_Appointment_Date]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[First_Appointment_Date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[Last_Appointment_Date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Last_Appointment_Date"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Last_Appointment_Date]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Last_Appointment_Date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[DateOfDeath]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DateOfDeath"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[DateOfDeath]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[DateOfDeath]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[death]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="death"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[death]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[death]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].Columns[mortality_score]"
+                      cachedDataType="numeric"
+                      cachedName="mortality_score"
+                      cachedPrecision="18"
+                      cachedScale="16"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[mortality_score]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[mortality_score]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[PatientID]"
+                      dataType="i4"
+                      name="PatientID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[DateOfBirth]"
+                      dataType="dbTimeStamp"
+                      name="DateOfBirth" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Race]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Race" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Myocardial_infarction]"
+                      dataType="bool"
+                      name="Myocardial_infarction" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Congestive_heart_failure]"
+                      dataType="bool"
+                      name="Congestive_heart_failure" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Peripheral_vascular_disease]"
+                      dataType="bool"
+                      name="Peripheral_vascular_disease" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Stroke]"
+                      dataType="bool"
+                      name="Stroke" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Dementia]"
+                      dataType="bool"
+                      name="Dementia" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Pulmonary]"
+                      dataType="bool"
+                      name="Pulmonary" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Rheumatic]"
+                      dataType="bool"
+                      name="Rheumatic" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Peptic_ulcer_disease]"
+                      dataType="bool"
+                      name="Peptic_ulcer_disease" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[LiverMild]"
+                      dataType="bool"
+                      name="LiverMild" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Diabetes_without_complications]"
+                      dataType="bool"
+                      name="Diabetes_without_complications" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Diabetes_with_complications]"
+                      dataType="bool"
+                      name="Diabetes_with_complications" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Paralysis]"
+                      dataType="bool"
+                      name="Paralysis" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Renal]"
+                      dataType="bool"
+                      name="Renal" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Cancer]"
+                      dataType="bool"
+                      name="Cancer" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[LiverSevere]"
+                      dataType="bool"
+                      name="LiverSevere" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Metastatic_solid_tumour]"
+                      dataType="bool"
+                      name="Metastatic_solid_tumour" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[HIV]"
+                      dataType="bool"
+                      name="HIV" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Obesity]"
+                      dataType="bool"
+                      name="Obesity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Depression]"
+                      dataType="bool"
+                      name="Depression" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Hypertension]"
+                      dataType="bool"
+                      name="Hypertension" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Drugs]"
+                      dataType="bool"
+                      name="Drugs" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Alcohol]"
+                      dataType="bool"
+                      name="Alcohol" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[First_Appointment_Date]"
+                      dataType="dbTimeStamp"
+                      name="First_Appointment_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[Last_Appointment_Date]"
+                      dataType="dbTimeStamp"
+                      name="Last_Appointment_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[DateOfDeath]"
+                      dataType="dbTimeStamp"
+                      name="DateOfDeath" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[death]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="death" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input].ExternalColumns[mortality_score]"
+                      dataType="numeric"
+                      name="mortality_score"
+                      precision="18"
+                      scale="16" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - PatientAnalytics.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - PatientAnalytics.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - PatientAnalytics.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Source - PatientAnalyticFile_withScore_csv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[PatientID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[PatientID]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[PatientID]"
+                      name="PatientID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[DateOfBirth]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[DateOfBirth]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[DateOfBirth]"
+                      name="DateOfBirth"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Gender]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Race]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Race]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Race]"
+                      name="Race"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Myocardial_infarction]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Myocardial_infarction]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Myocardial_infarction]"
+                      name="Myocardial_infarction"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Congestive_heart_failure]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Congestive_heart_failure]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Congestive_heart_failure]"
+                      name="Congestive_heart_failure"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Peripheral_vascular_disease]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Peripheral_vascular_disease]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Peripheral_vascular_disease]"
+                      name="Peripheral_vascular_disease"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Stroke]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Stroke]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Stroke]"
+                      name="Stroke"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Dementia]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Dementia]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Dementia]"
+                      name="Dementia"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Pulmonary]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Pulmonary]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Pulmonary]"
+                      name="Pulmonary"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Rheumatic]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Rheumatic]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Rheumatic]"
+                      name="Rheumatic"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Peptic_ulcer_disease]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Peptic_ulcer_disease]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Peptic_ulcer_disease]"
+                      name="Peptic_ulcer_disease"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[LiverMild]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[LiverMild]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[LiverMild]"
+                      name="LiverMild"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Diabetes_without_complications]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Diabetes_without_complications]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Diabetes_without_complications]"
+                      name="Diabetes_without_complications"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Diabetes_with_complications]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Diabetes_with_complications]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Diabetes_with_complications]"
+                      name="Diabetes_with_complications"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Paralysis]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Paralysis]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Paralysis]"
+                      name="Paralysis"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Renal]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Renal]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Renal]"
+                      name="Renal"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Cancer]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Cancer]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Cancer]"
+                      name="Cancer"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[LiverSevere]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[LiverSevere]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[LiverSevere]"
+                      name="LiverSevere"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Metastatic_solid_tumour]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Metastatic_solid_tumour]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Metastatic_solid_tumour]"
+                      name="Metastatic_solid_tumour"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[HIV]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[HIV]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[HIV]"
+                      name="HIV"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Obesity]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Obesity]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Obesity]"
+                      name="Obesity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Depression]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Depression]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Depression]"
+                      name="Depression"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Hypertension]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Hypertension]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Hypertension]"
+                      name="Hypertension"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Drugs]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Drugs]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Drugs]"
+                      name="Drugs"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Alcohol]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Alcohol]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Alcohol]"
+                      name="Alcohol"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[First_Appointment_Date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[First_Appointment_Date]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[First_Appointment_Date]"
+                      name="First_Appointment_Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Last_Appointment_Date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Last_Appointment_Date]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[Last_Appointment_Date]"
+                      name="Last_Appointment_Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[DateOfDeath]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[DateOfDeath]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[DateOfDeath]"
+                      name="DateOfDeath"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[death]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[death]"
+                      length="50"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[death]"
+                      name="death"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[mortality_score]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[mortality_score]"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].Columns[mortality_score]"
+                      name="mortality_score"
+                      precision="18"
+                      scale="16"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[PatientID]"
+                      dataType="i4"
+                      name="PatientID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[DateOfBirth]"
+                      dataType="dbTimeStamp"
+                      name="DateOfBirth" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Race]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Race" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Myocardial_infarction]"
+                      dataType="bool"
+                      name="Myocardial_infarction" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Congestive_heart_failure]"
+                      dataType="bool"
+                      name="Congestive_heart_failure" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Peripheral_vascular_disease]"
+                      dataType="bool"
+                      name="Peripheral_vascular_disease" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Stroke]"
+                      dataType="bool"
+                      name="Stroke" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Dementia]"
+                      dataType="bool"
+                      name="Dementia" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Pulmonary]"
+                      dataType="bool"
+                      name="Pulmonary" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Rheumatic]"
+                      dataType="bool"
+                      name="Rheumatic" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Peptic_ulcer_disease]"
+                      dataType="bool"
+                      name="Peptic_ulcer_disease" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[LiverMild]"
+                      dataType="bool"
+                      name="LiverMild" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Diabetes_without_complications]"
+                      dataType="bool"
+                      name="Diabetes_without_complications" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Diabetes_with_complications]"
+                      dataType="bool"
+                      name="Diabetes_with_complications" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Paralysis]"
+                      dataType="bool"
+                      name="Paralysis" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Renal]"
+                      dataType="bool"
+                      name="Renal" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Cancer]"
+                      dataType="bool"
+                      name="Cancer" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[LiverSevere]"
+                      dataType="bool"
+                      name="LiverSevere" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Metastatic_solid_tumour]"
+                      dataType="bool"
+                      name="Metastatic_solid_tumour" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[HIV]"
+                      dataType="bool"
+                      name="HIV" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Obesity]"
+                      dataType="bool"
+                      name="Obesity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Depression]"
+                      dataType="bool"
+                      name="Depression" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Hypertension]"
+                      dataType="bool"
+                      name="Hypertension" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Drugs]"
+                      dataType="bool"
+                      name="Drugs" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Alcohol]"
+                      dataType="bool"
+                      name="Alcohol" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[First_Appointment_Date]"
+                      dataType="dbTimeStamp"
+                      name="First_Appointment_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[Last_Appointment_Date]"
+                      dataType="dbTimeStamp"
+                      name="Last_Appointment_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[DateOfDeath]"
+                      dataType="dbTimeStamp"
+                      name="DateOfDeath" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[death]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="death" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output].ExternalColumns[mortality_score]"
+                      dataType="numeric"
+                      name="mortality_score"
+                      precision="18"
+                      scale="16" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Destination - PatientAnalytics.Inputs[Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{4B5216CF-CF4C-4505-A9FB-5EF92BF6F90E}"
+      DTS:From="Package\CREATE DATABASE SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\CREATE TABLE SQL Task"
+      DTS:Value="2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{C0D338FB-465B-4114-96E4-CC2E6BE23E36\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{C0D338FB-465B-4114-96E4-CC2E6BE23E36}"
+      DTS:From="Package\CREATE TABLE SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{C0D338FB-465B-4114-96E4-CC2E6BE23E36}"
+      DTS:To="Package\Data Flow Task 1"
+      DTS:Value="2" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="218.666666666667,42.6666666666667"
+          Id="Package\CREATE DATABASE SQL Task"
+          TopLeft="22.4999996647239,14" />
+        <NodeLayout
+          Size="198.666666666667,42.6666666666667"
+          Id="Package\CREATE TABLE SQL Task"
+          TopLeft="34.6666662320495,98.2333316751322" />
+        <NodeLayout
+          Size="161.333333333334,42.6666666666667"
+          Id="Package\Data Flow Task 1"
+          TopLeft="51.4166662010054,187.466665248672" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="132.91666628172,56.6666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.5666650084655"
+              Start="0,0"
+              End="0,34.0666650084655">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.0666650084655" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,11.2286450042328,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{C0D338FB-465B-4114-96E4-CC2E6BE23E36\}]"
+          TopLeft="133.041666216527,140.899998341799">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.5666669068731"
+              Start="0,0"
+              End="0,39.0666669068731">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.0666669068731" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.304453125,13.7286459534366,50.60890625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="280,42.6666666666667"
+          Id="Package\Data Flow Task 1\Source - PatientAnalyticFile_withScore_csv"
+          TopLeft="5.5,5.50000000000004" />
+        <NodeLayout
+          Size="217.333333333334,42.6666666666667"
+          Id="Package\Data Flow Task 1\Destination - PatientAnalytics"
+          TopLeft="36.8333333333334,108.166666666667" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+          TopLeft="145.5,48.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\Destination - PatientAnalytics">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
